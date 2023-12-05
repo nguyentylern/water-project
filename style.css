@@ -154,7 +154,7 @@ header {
     --normal-img-grid: 2 / 5;
 }
 
-.text-section-wrapper {
+.text-section-wrapper:not(:last-child) {
     border-bottom: 1px solid var(--clr-border);
     padding-block: var(--dm-300)
 }
@@ -206,6 +206,10 @@ header {
     font-size: var(--fs-250);
     font-style: normal;
     grid-column: var(--text-grid);
+}
+
+.references-title {
+    margin-block-start: var(--dm-300);
 }
 
 .text-section-content.references h3 {
