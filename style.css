@@ -154,7 +154,7 @@ header {
     --normal-img-grid: 2 / 5;
 }
 
-.text-section-wrapper:not(:last-child) {
+.text-section-wrapper {
     border-bottom: 1px solid var(--clr-border);
     padding-block: var(--dm-300)
 }
