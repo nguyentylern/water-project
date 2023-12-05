@@ -197,6 +197,10 @@ header {
 
 /* references */
 
+.text-section-wrapper:has(.references) {
+    padding-block-start: 0;
+}
+
 .text-section-content.references > * {
     grid-column: var(--text-grid);
 }
