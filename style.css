@@ -101,6 +101,12 @@ h2, .heading-2 {
     font-size: var(--fs-200);
 }
 
+/* text styles */
+
+span.italic {
+    font-style: italic;
+}
+
 /* wrappers and such */
 
 .grid {
@@ -176,7 +182,7 @@ header {
 .img-wrapper.wide-img { grid-column: var(--wide-img-grid); }
 
 .img-wrapper.side-img { grid-column: var(--side-img-grid); }
-.img-wrapper.side-img img { aspect-ratio: 3 / 4; max-height: 100%; }
+.img-wrapper.side-img img { max-height: 100%; }
 
 .img-wrapper.normal-img { grid-column: var(--normal-img-grid); }
 
@@ -193,7 +199,8 @@ header {
 /* footnote reference */
 
 .text-section-text sup { font-size: 0.8em; }
-.text-section-text sup a { color: var(--clr-link); }
+.text-section-content a { color: var(--clr-link); }
+.text-section-content a:hover { text-decoration: underline; }
 
 /* references */
 
@@ -249,6 +256,7 @@ header {
     }
 
     .img-wrapper.side-img { margin-block-start: var(--dm-100); }
+    .img-wrapper img { max-height: 50vh !important; } /* idk how else to do this without important bc it just keeps not working */
 }
 
 @media (width < 600px) {
