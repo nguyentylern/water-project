@@ -165,7 +165,7 @@ header {
     padding-block: var(--dm-300)
 }
 
-.text-section-content.grid h2 {
+.text-section-header {
     grid-column: 1;
 }
 
@@ -235,6 +235,10 @@ header {
     line-height: var(--dm-line);
 }
 
+.references-list li a {
+    word-break: break-all;
+}
+
 .references p {
     text-align: justify;
 }
@@ -265,6 +269,10 @@ header {
         --wide-img-grid: 1 / 7;
         --side-img-grid: 1 / 7;
         --normal-img-grid: 1 / 7;
+    }
+
+    .text-section-header {
+        grid-column: 1 / 7;
     }
     
     .text-section-content h2 {
