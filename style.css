@@ -131,7 +131,7 @@ header {
 }
 
 .header-content {
-    grid-column: span 5;
+    grid-column: 3 / 5;
 }
 
 .header-content > * + * {
@@ -141,6 +141,7 @@ header {
 .authors {
     list-style: none;
     line-height: var(--dm-line);
+    grid-column: 5 / 7;
 }
 
 /* img section */
@@ -154,10 +155,9 @@ header {
 /* text sections */
 
 .text-section-wrapper {
-    --text-grid: 2 / 5;
+    --text-grid: 3 / 6;
     --wide-img-grid: 1 / 7;
-    --side-img-grid: 5 / 7;
-    --normal-img-grid: 2 / 5;
+    --normal-img-grid: 3 / 6;
 }
 
 .text-section-wrapper:not(:last-child) {
@@ -166,7 +166,7 @@ header {
 }
 
 .text-section-header {
-    grid-column: 1;
+    grid-column: span 2;
 }
 
 .text-section-text {
@@ -181,9 +181,6 @@ header {
 
 .img-wrapper.wide-img { grid-column: var(--wide-img-grid); }
 
-.img-wrapper.side-img { grid-column: var(--side-img-grid); }
-.img-wrapper.side-img img { max-height: 100%; }
-
 .img-wrapper.normal-img { grid-column: var(--normal-img-grid); }
 
 .img-wrapper img {
@@ -192,7 +189,7 @@ header {
     object-fit: cover;
 }
 
-.text-section-text + .img-wrapper:not(.side-img), .img-wrapper + .text-section-text {
+.text-section-text + .img-wrapper, .img-wrapper + .text-section-text {
     margin-top: var(--dm-100);
 }
 
@@ -247,41 +244,53 @@ header {
     padding-block-end: var(--dm-400);
 }
 
-/* tablet */
+/* mobile layouts */
 
-@media (width < 900px) {
+@media (width< 66rem) {
+    header.grid { row-gap: var(--dm-100); }
+    
+    .header-content { grid-column: 3 / 6; }
+
+    .authors { grid-column: 3 / 6; }
+}
+
+@media (width < 56rem) {
     .header-decoration { display: none; }
+
+    .header-content { grid-column: 2 / 6; }
+
+    .authors { grid-column: 2 / 6; }
+
+    .text-section-header {
+        grid-column: 2 / 6;
+        margin-bottom: var(--dm-100);
+    }
 
     .text-section-wrapper {
         --text-grid: 2 / 6;
         --wide-img-grid: 1 / 7;
-        --side-img-grid: 2 / 6;
         --normal-img-grid: 2 / 6;
     }
 
-    .img-wrapper.side-img { margin-block-start: var(--dm-100); }
-    .img-wrapper img { max-height: 50vh !important; } /* idk how else to do this without important bc it just keeps not working */
+    /* .img-wrapper img { max-height: 50vh !important; } */
 }
 
-@media (width < 600px) {
+@media (width < 46rem) {
+    .header-content { grid-column: 1 / 7; }
+
+    .authors { grid-column: 1 / 7; }
+
     .text-section-wrapper {
         --text-grid: 1 / 7;
         --wide-img-grid: 1 / 7;
-        --side-img-grid: 1 / 7;
         --normal-img-grid: 1 / 7;
     }
 
-    .text-section-header {
-        grid-column: 1 / 7;
-    }
+    .text-section-header { grid-column: 1 / 7; }
     
-    .text-section-content h2 {
-        margin-block-end: var(--dm-100);
-    }
+    .text-section-content h2 { margin-block-end: var(--dm-100); }
 
-    .references-list {
-        list-style-position: inside;
-    }
+    .references-list { list-style-position: inside; }
 }
 
 @media (width < 450px) {
